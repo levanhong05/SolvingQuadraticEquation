@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/equation">
+        <file>images/infinity.png</file>
+    </qresource>
+</RCC>

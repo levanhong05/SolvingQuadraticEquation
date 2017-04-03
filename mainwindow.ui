@@ -11,12 +11,16 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Solving Quadratic Equation</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/equation/images/infinity.png</normaloff>:/equation/images/infinity.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="frameParameter">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -31,7 +35,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="groupEquation">
          <property name="title">
           <string>Phương trình</string>
          </property>
@@ -161,7 +165,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_3">
+        <widget class="QGroupBox" name="groupRing">
          <property name="title">
           <string>Vành Z</string>
          </property>
@@ -179,6 +183,9 @@
               <width>150</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="text">
+             <string>2</string>
             </property>
            </widget>
           </item>
@@ -206,7 +213,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="groupResult">
          <property name="title">
           <string>Kết quả</string>
          </property>
@@ -283,6 +290,8 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

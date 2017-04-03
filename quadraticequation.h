@@ -29,6 +29,9 @@ private:
 
     void solvingSimpleEquation(int b, int c, int p);
 
+signals:
+    void emitResult(QString);
+
 private:
     int _coefficientA;
     int _coefficientB;

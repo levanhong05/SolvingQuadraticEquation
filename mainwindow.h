@@ -3,8 +3,7 @@
 
 #include <QMainWindow>
 
-namespace Ui
-{
+namespace Ui {
 class MainWindow;
 }
 
@@ -20,8 +19,17 @@ private slots:
 
     void on_btnOK_clicked();
 
+    void on_txtPrimeP_editingFinished();
+
+public slots:
+    void onResultChanged(QString result);
+
+private:
+    bool isPrime(int p);
+
 private:
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H
