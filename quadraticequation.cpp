@@ -175,9 +175,9 @@ void QuadraticEquation::dissect(int &s, int &l, int p)
 
 void QuadraticEquation::solvingQuadraticEquation()
 {
-    _coefficientA = _coefficientA % _primeP;
-    _coefficientB = _coefficientB % _primeP;
-    _coefficientC = _coefficientC % _primeP;
+    _coefficientA = modulo(_coefficientA, _primeP);
+    _coefficientB = modulo(_coefficientB, _primeP);
+    _coefficientC = modulo(_coefficientC, _primeP);
 
     if (_coefficientA == 0) {
         if (_coefficientB == 0) {
