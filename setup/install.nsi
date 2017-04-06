@@ -113,6 +113,7 @@ Delete "$SMPROGRAMS\${PRODUCT}\*.*"
 RmDir "$SMPROGRAMS\${PRODUCT}"
 # second, remove the link from the start menu
 Delete "$SMPROGRAMS\SolvingEquation.lnk"
+Delete "$DESKTOP\SolvingEquation.lnk"
 DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\${PRODUCT}"
 DeleteRegKey HKEY_LOCAL_MACHINE "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT}"
 RMDir /r "$INSTDIR"
