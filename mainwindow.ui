@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>637</width>
-    <height>343</height>
+    <height>331</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/equation/images/infinity.png</normaloff>:/equation/images/infinity.png</iconset>
+    <normaloff>:/equation/images/infinity.ico</normaloff>:/equation/images/infinity.ico</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -34,12 +34,18 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QGroupBox" name="groupEquation">
          <property name="title">
-          <string>Phương trình</string>
+          <string>Equation</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
           <item row="2" column="1">
            <widget class="QLabel" name="label_9">
             <property name="text">
@@ -116,7 +122,7 @@
            </widget>
           </item>
           <item row="5" column="9">
-           <widget class="QLineEdit" name="lineEdit_4">
+           <widget class="QLineEdit" name="txtValue">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -137,7 +143,7 @@
           <item row="5" column="0">
            <widget class="QLabel" name="label_8">
             <property name="text">
-             <string>Quadratic equation</string>
+             <string>Quadratic Equation</string>
             </property>
            </widget>
           </item>
@@ -167,7 +173,7 @@
        <item>
         <widget class="QGroupBox" name="groupRing">
          <property name="title">
-          <string>Vành Z</string>
+          <string>Ring of Integer Z</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="1">
@@ -187,12 +193,15 @@
             <property name="text">
              <string>2</string>
             </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
            </widget>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Số nguyên p</string>
+             <string>The prime p</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -215,12 +224,24 @@
        <item>
         <widget class="QGroupBox" name="groupResult">
          <property name="title">
-          <string>Kết quả</string>
+          <string>Result</string>
          </property>
          <property name="flat">
           <bool>false</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="leftMargin">
+           <number>9</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>9</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <widget class="QTextEdit" name="txtResult">
             <property name="enabled">
@@ -243,6 +264,18 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
@@ -259,14 +292,14 @@
        <item>
         <widget class="QPushButton" name="btnOK">
          <property name="text">
-          <string>Tìm Nghiệm</string>
+          <string>Find root</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btnClose">
          <property name="text">
-          <string>Đóng</string>
+          <string>Close</string>
          </property>
         </widget>
        </item>
@@ -288,6 +321,34 @@
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>637</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>true</bool>
+   </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

@@ -93,7 +93,6 @@ int QuadraticEquation::multiplyNumber(int a, int b, int p)
     QString a1 = compareString(a);
     QString b1 = compareString(b);
     QString multi = multiplication(a1, b1);
-
     return convertStringToInteger(multi, p);
 }
 
@@ -131,10 +130,8 @@ int QuadraticEquation::bezout_ND(int a, int p)
         r = p - a * q;
         x = x2 - x1 * q;
         y = y2 - y1 * q;
-
         p = a;
         a = r;
-
         x2 = x1;
         x1 = x;
         y2 = y1;
@@ -148,9 +145,8 @@ void QuadraticEquation::solvingSimpleEquation(int b, int c, int p)
 {
     b = modulo(b, p);
     c = modulo(-c, p);
-    int dao_b = modulo(bezout_ND(b, p), p);
-
-    emit emitResult(tr("Nghiệm phương trình là: ") + QString::number(multiplyNumber(c, dao_b, p)));
+    int inverseOfB = modulo(bezout_ND(b, p), p);
+    emit emitResult(tr("The root of the equation is: ") + QString::number(multiplyNumber(c, inverseOfB, p)));
 }
 
 int QuadraticEquation::findEquation(int p)
@@ -186,18 +182,18 @@ void QuadraticEquation::solvingQuadraticEquation()
     if (_coefficientA == 0) {
         if (_coefficientB == 0) {
             if (_coefficientC == 0) {
-                emit emitResult(tr("Phương trình có vô số nghiệm"));
+                emit emitResult(tr("The equation has p root ranging from 0 to (p - 1)"));
             } else {
-                emit emitResult(tr("Phương trình vô nghiệm"));
+                emit emitResult(tr("The equation has no root."));
             }
         } else {
             solvingSimpleEquation(_coefficientB, _coefficientC, _primeP);
         }
     } else {
-        int d = modulo(multiplyNumber(_coefficientB, _coefficientB, _primeP) - multiplyNumber(multiplyNumber(4, _coefficientA, _primeP), _coefficientC, _primeP), _primeP);
+        int delta = modulo(multiplyNumber(_coefficientB, _coefficientB, _primeP) - multiplyNumber(multiplyNumber(4, _coefficientA, _primeP), _coefficientC, _primeP), _primeP);
 
-        if (power(d, (_primeP - 1) / 2, _primeP) == _primeP - 1) {
-            emit emitResult(tr("Phương trình vô nghiệm"));
+        if (power(delta, (_primeP - 1) / 2, _primeP) == _primeP - 1) {
+            emit emitResult(tr("The equation has no root."));
         } else {
             int n = findEquation(_primeP);
             int s, l;
@@ -205,7 +201,7 @@ void QuadraticEquation::solvingQuadraticEquation()
             int k = 1, r;
 
             for (int i = 1; i <= s - 1; i++) {
-                r = multiplyNumber(power(d, l, _primeP), power(k, 2, _primeP), _primeP);
+                r = multiplyNumber(power(delta, l, _primeP), power(k, 2, _primeP), _primeP);
                 r = power(r, power(2, s - i - 1, _primeP), _primeP);
 
                 if (r == _primeP - 1) {
@@ -213,8 +209,7 @@ void QuadraticEquation::solvingQuadraticEquation()
                 }
             }
 
-            int y = multiplyNumber(k, power(d, (l + 1) / 2, _primeP), _primeP);
-
+            int y = multiplyNumber(k, power(delta, (l + 1) / 2, _primeP), _primeP);
             solvingSimpleEquation(multiplyNumber(2, _coefficientA, _primeP), modulo(_coefficientB + y, _primeP), _primeP);
             solvingSimpleEquation(multiplyNumber(2, _coefficientA, _primeP), modulo(_coefficientB - y, _primeP), _primeP);
         }

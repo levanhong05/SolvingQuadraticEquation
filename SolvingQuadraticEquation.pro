@@ -13,12 +13,15 @@ TEMPLATE = app
 
 SOURCES +=  main.cpp\
             mainwindow.cpp \
-            quadraticequation.cpp
+            quadraticequation.cpp \
+    aboutdialog.cpp
 
 HEADERS  += mainwindow.h \
-            quadraticequation.h
+            quadraticequation.h \
+    aboutdialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    aboutdialog.ui
 
 RESOURCES += \
             resources.qrc

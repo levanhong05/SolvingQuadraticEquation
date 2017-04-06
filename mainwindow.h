@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 
-namespace Ui {
+namespace Ui
+{
 class MainWindow;
 }
 
@@ -20,6 +21,10 @@ private slots:
     void on_btnOK_clicked();
 
     void on_txtPrimeP_editingFinished();
+
+    void on_actionAbout_triggered();
+
+    void on_txtPrimeP_textChanged(const QString &arg1);
 
 public slots:
     void onResultChanged(QString result);
